@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Bookin Parking Cars</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="sidebar d-flex flex-column flex-shrink-0 p-3" style="width: 280px;">
+            <a href="index.html"
+               class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <!-- logo will be here -->
+                <img src="Images/logo/park.png" alt="img.png" class="logo">
+                <span class="fs-4">Parking System</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active" aria-current="page">
+                        <!-- Icon will be here -->
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="AddReserve.html" class="nav-link link-dark">
+                        <!-- Icone will be here -->
+                        <i class="far fa-circle-check"></i>
+                        Reserve Park
+                    </a>
+                </li>
+                <li>
+                    <a href="RemoveReserve.html" class="nav-link link-dark">
+                        <i class="fa-regular fa-rectangle-xmark"></i>
+                        Remove Reserve
+                    </a>
+                </li>
+                <li>
+                    <a href="parks.html" class="nav-link link-dark">
+                        <!-- Icon will be here -->
+                        <i class="fa-solid fa-parking"></i>
+                        Parks
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html" class="nav-link link-dark">
+                        <!-- Icon will be here -->
+                        <i class="fa-regular fa-credit-card"></i>
+                        Reports
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <a class="dropdown-item" href="#">Sign out</a>
+        </div>
+        <div class="main-content">
+            <div class="head bg-white py-2 px-3">
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="search" placeholder="search here">
+                </div>
+                <div class="icons d-flex align-items-center">
+                    <span class="notification">
+                        <i class="far fa-bell"></i>
+                    </span>
+                    <img src="Images/avatar.png">
+                </div>
+            </div>
+            <div class="box">
+                <h4 class="title">AHOA COMAPNY</h4>
+                <div class="box-content">
+                    <div><img src="Images/logo/park.png" alt="img.png"></div>
+                    <div class="text p-3">
+                        <h5>Welcome To AHOA Company</h5>
+
+                        <p>
+                            <span class="ahoa">AHOA</span> is a sofware company that provides many softwares such as a
+                            parking system to mange
+                            some services that related to reserve a park
+                            for cars and here we show
+                            those services:
+                        </p>
+                        <div class="services mt-5">
+                            <div class="service">
+                                <i class="far fa-circle-check fa-2x mb-2"></i>
+                                <span>Add Reserve</span>
+                            </div>
+                            <div class="service">
+                                <i class="fa-regular fa-rectangle-xmark fa-2x mb-2"></i>
+                                <span>Remove Reserve</span>
+                            </div>
+                            <div class="service">
+                                <i class="fa-regular fa-credit-card fa-2x mb-2"></i>
+                                <span>Reports</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-light">
+                <p class="m-0">All Rights Reserved To <span class="ahoa">AHOA</span> Company &copy;2023</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="JS/bootstrap.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+
+</html>

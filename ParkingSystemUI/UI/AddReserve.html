@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/jquery-3.6.3.min.js"></script>
+    
+    <title>Add Reserve</title>
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="sidebar d-flex flex-column flex-shrink-0 p-3" style="width: 280px;">
+            <a href="index.html"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <!-- logo will be here -->
+                <img src="Images/logo/park.png" alt="img.png" class="logo">
+                <span class="fs-4">Parking System</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" aria-current="page">
+                        <!-- Icon will be here -->
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="AddReserve.html" class="nav-link link-dark active">
+                        <!-- Icone will be here -->
+                        <i class="far fa-circle-check"></i>
+                        Reserve Park
+                    </a>
+                </li>
+                <li>
+                    <a href="RemoveReserve.html" class="nav-link link-dark">
+                        <i class="fa-regular fa-rectangle-xmark"></i>
+                        Remove Reserve
+                    </a>
+                </li>
+                <li>
+                    <a href="parks.html" class="nav-link link-dark">
+                        <!-- Icon will be here -->
+                        <i class="fa-regular fa-credit-card"></i>
+                        Parks
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html" class="nav-link link-dark">
+                        <!-- Icon will be here -->
+                        <i class="fa-regular fa-credit-card"></i>
+                        Reports
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <a class="dropdown-item" href="#">Sign out</a>
+        </div>
+        <div class="main-content">
+            <div class="head bg-white py-2 px-3">
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="search" placeholder="search here">
+                </div>
+                <div class="icons d-flex align-items-center">
+                    <span class="notification">
+                        <i class="far fa-bell"></i>
+                    </span>
+                    <img src="Images/avatar.png">
+                </div>
+            </div>
+            <div class="box">
+                <h4 class="title">Add Reserve</h4>
+                <form action="#" class="p-3">
+                    <div class="mb-3">
+                        <label for="car-name" class="mb-1">Car Name*</label>
+                        <input class="form-control" id="car-name" type="text" placeholder="Enter car name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="plate-number" class="mb-2">Plate Number*</label>
+                        <input class="form-control" id="car-name" type="text" placeholder="Enter plate number">
+                    </div>
+                    <div>
+                        <label for="" class="mb-1">Car company*</label>
+                        <select class="form-select mb-3">
+                            <option selected="">Select the car company</option>
+                            <option value="1">Toyota</option>
+                            <option value="2">Nissan</option>
+                            <option value="3">Kya</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="" class="mb-1">Parking name*</label>
+                        <select id="parking-names" class="form-select mb-3">
+                            <option>Select parking name</option>
+                            
+                        </select>
+                    </div>
+                    <div>
+                        <input type="submit" value="Add" id="addBtn" class="btn btn-primary px-5">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modul1">
+            <div class="header">
+                <div class="d-flex align-items-center">
+                    <i class="fa-solid fa-parking"></i>
+                    <h3>Reservation</h3>
+                </div>
+                <span class="close">&times;</span>
+            </div>
+            <div class="body">
+                <p class="message">
+                    This Park has been already reserved Please choose another
+                </p>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
+
+    <script src="JS/bootstrap.js"></script>
+    <script>
+        let parkingNames = document.getElementById('parking-names');
+        let selectedItem = "";
+        parkingNames.onchange = getSelectedItem;
+
+        function getSelectedItem() {
+            selectedItem = parkingNames.value;
+        }
+
+        let addBtn = document.getElementById('addBtn');
+        addBtn.onclick = saveSelectedIem;
+        let reservedParks = []
+        if (window.localStorage.getItem('park-name')) {
+            reservedParks = JSON.parse(window.localStorage.getItem('park-name'));
+        }
+        function saveSelectedIem() {
+            if (!reservedParks.includes(selectedItem)) {
+                if (selectedItem != "") {
+                    reservedParks.push(selectedItem);
+                    window.localStorage.setItem('park-name', JSON.stringify(reservedParks));
+                }
+
+            }
+            else {
+                showFailurModul();
+            }
+
+        }
+
+        // Modul1 Part
+        let modul1 = document.querySelector(".modul1");
+        let close = document.querySelector(".close");
+        let overlay = document.querySelector('.overlay');
+        function showFailurModul() {
+            modul1.classList.add('active');
+            overlay.classList.add('active');
+        }
+        close.addEventListener("click", function () {
+            modul1.classList.remove('active');
+            overlay.classList.remove('active');
+        })
+        window.onclick = function (e) {
+            if (e.target == overlay) {
+                modul1.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        }
+
+        // Modul2
+
+        // window.localStorage.clear()  
+
+        $(document).ready(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "https://localhost:44324/Parks/Get",
+
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function (index, value) {
+                        let option = document.createElement('option');
+                        console.log(value)
+                    })
+
+                }
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

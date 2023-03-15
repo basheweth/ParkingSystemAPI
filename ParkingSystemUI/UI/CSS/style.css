@@ -1,0 +1,356 @@
+/* Start SideBar Styling */
+
+.page {
+    background-color: rgb(243 244 254 /1);
+    min-height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ddd;
+    position: relative;
+    z-index: 1000;
+}
+
+.sidebar img.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem;
+    transition: 0.3s;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.nav-link:hover {
+    color: #fff;
+    background-color: #0d6efd;
+}
+
+.nav-link i {
+    margin-right: 6px;
+}
+
+.page .main-content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* Start Head */
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head .search {
+    position: relative;
+}
+
+.head .search input {
+    padding: 7px 7px 7px 30px;
+    border: 1px solid #999;
+    outline: none;
+    width: 170px;
+    transition: 0.5s;
+    border-radius: 6px;
+}
+
+.head .search input:focus {
+    width: 200px;
+}
+
+.head .search input:focus::placeholder {
+    opacity: 0;
+}
+
+.head .search i {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 10px;
+    font-size: 14px;
+    color: #999;
+}
+
+.head .icons .notification {
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.head .icons .notification::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: red;
+    right: -6px;
+    top: -4px;
+}
+
+.head .icons img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* End Head */
+.page h4.title {
+    font-size: 20px;
+    margin: 20px 20px 30px;
+    position: relative;
+}
+
+.page h4.title::before,
+.page h4.title::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    left: 0;
+    bottom: -10px;
+}
+
+.page h4.title::before {
+    width: 100px;
+    background: #fff;
+}
+
+.page h4.title::after {
+    width: 30px;
+    background: #000;
+}
+
+.box-content {
+    display: flex;
+    background-color: #fff;
+    margin-right: 10px;
+    margin-left: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.box-content::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--bs-primary);
+}
+
+.box-content>div {
+    width: 50%;
+}
+
+.box-content img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.box-content .text p {
+    color: #000000bd;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-between;
+}
+
+.services .service {
+    width: 30%;
+    background-color: rgb(243 244 254 /1);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fa-circle-check {
+    color: #22c55e;
+}
+
+.fa-rectangle-xmark {
+    color: #f44336;
+}
+
+.fa-credit-card {
+    color: #0d6efd;
+}
+
+.nav-link:hover i {
+    color: #fff;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    color: #000;
+    text-align: center;
+}
+
+.ahoa {
+    color: #0d6efd;
+}
+
+/* End SideBar Styling */
+
+/* Start Login page */
+.login-page {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(243 244 254 /1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page form {
+    width: 400px;
+}
+
+.login-page img {
+    width: 100px;
+}
+
+/* End login Page */
+
+
+/* Start Parks page */
+
+.parks .parks-content {
+    background-color: #fff;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.parks .parks-content>a {
+    background-color: rgb(243 244 254 /1);
+    position: relative;
+    width: calc(100% / 4 - 10px);
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.parks .parks-content>a.reserved .park,
+.parks .parks-content>a .park {
+    border: 2px dotted #22c55e;
+    display: block;
+    text-align: center;
+    width: 80px;
+    height: 90px;
+    margin: 5px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parks .parks-content>a .park {
+    border: 2px dotted #ffc107;
+}
+
+a .park-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffc107ab;
+    padding: 3px 10px;
+    color: #fff;
+    text-align: center;
+}
+
+a.reserved .park-name {
+    background-color: #3de87cc4;
+}
+
+.parks .fa-car {
+    font-size: 40px;
+}
+
+/* End Parks Page */
+
+/* Start Modul Styling */
+.modul1 {
+    position: fixed;
+    width: 400px;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 0.3s top ease-in-out;
+    z-index: 5000;
+}
+
+.modul1.active {
+    top: 15%;
+}
+
+.modul1 .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bs-danger);
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.modul1 .header h3 {
+    font-weight: 400;
+    font-size: 17px;
+    margin: 0 0 0 7px;
+}
+
+.modul1 .header .fa-parking {
+    color: #fff;
+}
+
+.modul1 .header .close {
+    cursor: pointer;
+}
+
+.modul1 .body {
+    padding: 15px 30px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 3000;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* End Modul Styling */
